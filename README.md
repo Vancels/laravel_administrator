@@ -7,3 +7,7 @@ laravel administrator
 	'Vancels\Administrator\AdministratorServiceProvider',
 ]
 ```
+
+```sh
+php artisan vendor:publish
+```

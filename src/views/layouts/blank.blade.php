@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
@@ -15,7 +17,8 @@
     {!! HTML::script('admin_static/extra/seajs/seajs-css.js') !!}
     {!! HTML::script('admin_static/extra/seajs/admin_config_seajs.js') !!}
 
-    {{--@include('layout.main_upload')--}}
+
+
 
     <script>
         $.ajaxSetup({
@@ -37,11 +40,8 @@
 <body>
 
 <div id="wrapper">
-    @include('administrator::public.nav')
-    <div id="page-wrapper" class="gray-bg">
-        @include('administrator::public.top')
+    <div class="gray-bg">
         {!! $content !!}
-        @include('administrator::public.footer')
     </div>
 </div>
 

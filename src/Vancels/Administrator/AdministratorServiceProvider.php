@@ -34,7 +34,7 @@ class AdministratorServiceProvider extends ServiceProvider
             return $cls;
         });
 
-        $this->app->alias('Tools', ToolsFacade::class);
+        $this->app->alias('vTools', ToolsFacade::class);
     }
 
 }

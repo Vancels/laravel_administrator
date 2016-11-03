@@ -69,10 +69,10 @@ class AdminController extends Controller
      */
     public function dashboard()
     {
-        $admin = Auth::guard('admin')->user();
-        echo "ds";
+        $this->layout->nav     = [];
+        $this->layout->content = 'xx';
 
-        return $admin->name;
+        return $this->layout;
     }
 
 }

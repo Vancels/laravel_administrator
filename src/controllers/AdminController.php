@@ -43,6 +43,16 @@ class AdminController extends Controller
     public function __construct(Request $request, Session $session)
     {
         $this->middleware('auth:admin');
+
+        $this->request = $request;
+        $this->session = $session;
+
+        if (!is_null($this->layout)) {
+            $this->layout = view($this->layout);
+
+            $this->layout->page      = false;
+            $this->layout->dashboard = false;
+        }
     }
 
     public function index()
@@ -59,7 +69,10 @@ class AdminController extends Controller
      */
     public function dashboard()
     {
+        $admin = Auth::guard('admin')->user();
         echo "ds";
+
+        return $admin->name;
     }
 
 }

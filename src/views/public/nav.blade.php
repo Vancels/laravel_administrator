@@ -21,19 +21,26 @@
                 </div>
             </li>
 
-            @foreach($nav as $nav_value)
-                <li class="{{ $nav_value['selected'] }}">
-                    <a href="{{ $nav_value['url'] }}"> <i class="fa fa-th-large"></i>
-                        <span class="nav-label">{{ $nav_value['title'] }}</span>
-                        <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        @foreach($nav_value['child'] as $child)
-                            <li class="{{ $child['selected'] }}">
-                                <a href="{{ $child['url'] }}">{{ $child['title'] }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </li>
+            @foreach($nav as $key=>$nav_value)
+                @if(is_array($nav_value))
+                    <li class="">
+                        <a href="#"> <i class="fa fa-th-large"></i>
+                            <span class="nav-label">{{ $key }}</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            @foreach($nav_value as $child)
+                                <li class="{{ $child['selected'] }}">
+                                    <a href="{{ $child['url'] }}">{{ $child['title'] }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @else
+                    <li class="{{ $nav_value['selected'] }}">
+                        <a href="{{ $nav_value['url'] }}"> <i class="fa fa-edit"></i>
+                            <span class="nav-label">{{ $nav_value['title'] }}</span> </a>
+                    </li>
+                @endif
+
 
             @endforeach
 

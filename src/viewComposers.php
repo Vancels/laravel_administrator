@@ -31,3 +31,39 @@ View::composer(array('administrator::layouts.default'), function ($view) {
 
     $view->js += array('page' => asset('packages/vancels/administrator/js/page.js'));
 });
+View::composer(array('administrator::public.nav'), function ($view) {
+    $menu = app(\Vancels\Administrator\Menu::class)->getMenu();
+    $view->nav = $menu;
+});
+View::composer(array('administrator::public.navs'), function ($view) {
+    $menu = config("administrator.menu");
+    $nav  = [];
+    foreach ($menu as $key => $value) {
+        if (is_array($value)) {
+            // 下级
+            $nav_child = [];
+            foreach ($value as $child) {
+                $nav_child[] = [
+                    'selected' => "",
+                    'url'      => '#',
+                    'title'    => $child,
+                ];
+            }
+            $nav[] = [
+                'selected' => "",
+                'url'      => '',
+                'title'    => $key,
+                'child'    => $nav_child,
+            ];
+        } else {
+            // 直接
+            $nav[] = [
+                'selected' => "",
+                'url'      => '#',
+                'title'    => $value,
+                'child'    => [],
+            ];
+        }
+    }
+    $view->nav = $nav;
+});

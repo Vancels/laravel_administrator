@@ -75,4 +75,11 @@ class AdminController extends Controller
         return $this->layout;
     }
 
+    protected function quick_view($view, $arg = [])
+    {
+        $this->layout->content = view($view, $arg);
+
+        return $this->layout;
+    }
+
 }

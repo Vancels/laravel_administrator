@@ -11,8 +11,7 @@
     "issues": "https://github.com/Vancels/laravel_administrator/issues"
   },
   "require"          : {
-    "php"              : ">=5.4.0",
-    "laravel/framework": "5.*"
+    "php": ">=5.4.0"
   },
   "autoload"         : {
     "classmap": [

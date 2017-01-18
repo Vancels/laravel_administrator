@@ -33,6 +33,7 @@ View::composer(array('administrator::layouts.default'), function ($view) {
 });
 View::composer(array('administrator::public.nav'), function ($view) {
     $menu = app(\Vancels\Administrator\Menu::class)->getMenu();
+
     $view->nav = $menu;
 });
 View::composer(array('administrator::public.navs'), function ($view) {

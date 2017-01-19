@@ -127,7 +127,7 @@ class ToolServiceInterface
      *
      * @return mixed
      */
-    public function combox_value($key, $param = null)
+    public static function combox_value($key, $param = null)
     {
         if ($param == null) {
             $param = \Input::all();

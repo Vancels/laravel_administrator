@@ -28,6 +28,14 @@ class AdministratorServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // 非正式环境下
+        if (env('APP_DEBUG')) {
+            if (class_exists(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class)) {
+                $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+            }
+        }
+
+
         $this->app->singleton('tools', function ($app) {
             $cls = new ToolServiceInterface($app);
 

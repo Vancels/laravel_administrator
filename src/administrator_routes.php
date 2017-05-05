@@ -11,9 +11,9 @@ if (is_array(config('administrator.middleware'))) {
 }
 
 Route::group(array('domain' => config('administrator.domain'), 'prefix' => config('administrator.uri'), 'middleware' => ['web']), function () {
-    Route::get('login', '\Vancels\Administrator\Auth\AuthController@getLogin');
-    Route::post('login', '\Vancels\Administrator\Auth\AuthController@postLogin');
-    Route::get('logout', '\Vancels\Administrator\Auth\AuthController@getLogout');
+    Route::get('login', '\Vancels\Administrator\Auth\AuthController@showLoginForm')->name(config('administrator.uri') . '.login');
+    Route::post('login', '\Vancels\Administrator\Auth\AuthController@login');
+    Route::get('logout', '\Vancels\Administrator\Auth\AuthController@logout')->name(config('administrator.uri') . 'logout');
 });
 
 /**

@@ -2,16 +2,15 @@
 
 namespace Vancels\Administrator\Auth;
 
-use App\Admin;
+use Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Vancels\Administrator\Models\AdminUser;
 
 class AuthController extends Controller
 {
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AuthenticatesUsers;
 
     protected $redirectTo = '/admin';
     protected $guard = 'admin';
@@ -20,12 +19,16 @@ class AuthController extends Controller
 
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->middleware($this->getMiddleware(), ['except' => 'logout']);
+    }
+
+    public function showLoginForm()
+    {
+        return view($this->loginView);
     }
 
     protected function validator(array $data)
     {
-
         return Validator::make($data, [
             'name'     => 'required|max:255',
             'email'    => 'required|email|max:255|unique:admins',

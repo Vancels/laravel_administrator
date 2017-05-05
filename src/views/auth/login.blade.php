@@ -7,10 +7,10 @@
 
     <title>易便利 - 登录</title>
 
-    {!! HTML::style('admin_static/css/bootstrap.min.css') !!}
-    {!! HTML::style('admin_static/font-awesome/css/font-awesome.css') !!}
-    {!! HTML::style('admin_static/css/animate.css') !!}
-    {!! HTML::style('admin_static/css/style.css') !!}
+    {!! html::style('admin_static/css/bootstrap.min.css') !!}
+    {!! html::style('admin_static/font-awesome/css/font-awesome.css') !!}
+    {!! html::style('admin_static/css/animate.css') !!}
+    {!! html::style('admin_static/css/style.css') !!}
 
 </head>
 <body class="gray-bg">
@@ -43,11 +43,11 @@
         </form>
     </div>
 </div>
-{!! HTML::script('admin_static/js/jquery-2.1.1.js') !!}
-{!! HTML::script('admin_static/js/bootstrap.min.js') !!}
+{!! html::script('admin_static/js/jquery-2.1.1.js') !!}
+{!! html::script('admin_static/js/bootstrap.min.js') !!}
 
-{!! HTML::style('admin_static/css/plugins/toastr/toastr.min.css') !!}
-{!! HTML::script('admin_static/js/plugins/toastr/toastr.min.js') !!}
+{!! html::style('admin_static/css/plugins/toastr/toastr.min.css') !!}
+{!! html::script('admin_static/js/plugins/toastr/toastr.min.js') !!}
 <style>
     #toast-container > .toast-error::before {
         content: '';

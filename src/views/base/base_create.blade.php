@@ -1,12 +1,12 @@
 @extends('layout.main')
 
 @section('header')
-    {!! HTML::style('css/plugins/toastr/toastr.min.css') !!}
-    {!! HTML::style('css/plugins/iCheck/custom.css') !!}
+    {!! html::style('css/plugins/toastr/toastr.min.css') !!}
+    {!! html::style('css/plugins/iCheck/custom.css') !!}
 @stop
 @section('header_end')
-    {!! HTML::style('css/plugins/chosen/chosen.css') !!}
-    {!! HTML::style('css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css') !!}
+    {!! html::style('css/plugins/chosen/chosen.css') !!}
+    {!! html::style('css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css') !!}
 
     <script>
         var refer_icon = function (that) {
@@ -16,13 +16,13 @@
 @stop
 @section('js')
 
-    {!! HTML::script('js/plugins/toastr/toastr.min.js') !!}
-    {!! HTML::script('js/plugins/chosen/chosen.jquery.js') !!}
-    {!! HTML::script('js/plugins/iCheck/icheck.min.js') !!}
+    {!! html::script('js/plugins/toastr/toastr.min.js') !!}
+    {!! html::script('js/plugins/chosen/chosen.jquery.js') !!}
+    {!! html::script('js/plugins/iCheck/icheck.min.js') !!}
 
     {{--表单验证--}}
-    {!! HTML::script('js/plugins/validate/jquery.validate.min.js') !!}
-    {!! HTML::script('js/plugins/validate/messages_zh.min.js') !!}
+    {!! html::script('js/plugins/validate/jquery.validate.min.js') !!}
+    {!! html::script('js/plugins/validate/messages_zh.min.js') !!}
 
     <script>
         //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级

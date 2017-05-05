@@ -1,8 +1,10 @@
 ### Helper
+####composer require laravelcollective/html
 ###1.请在 config/app.php 里面 添加
 ####providers
 ```php
     Vancels\Administrator\AdministratorServiceProvider::class,
+    Collective\Html\HtmlServiceProvider::class,
 ```
 ####aliases
 ```php

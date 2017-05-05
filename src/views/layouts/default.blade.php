@@ -7,13 +7,13 @@
 
     <title>@yield('seo_title','易便利 - 管理后台')</title>
     <meta name="_token" content="{{ csrf_token() }}"/>
-    {!! HTML::style('admin_static/css/bootstrap.min.css') !!}
-    {!! HTML::style('admin_static/font-awesome/css/font-awesome.css') !!}
-    {!! HTML::script('admin_static/js/jquery-2.1.1.js') !!}
-    {!! HTML::script('admin_static/extra/layer/layer.js') !!}
-    {!! HTML::script('admin_static/extra/seajs/sea.js') !!}
-    {!! HTML::script('admin_static/extra/seajs/seajs-css.js') !!}
-    {!! HTML::script('admin_static/extra/seajs/admin_config_seajs.js') !!}
+    {!! html::style('admin_static/css/bootstrap.min.css') !!}
+    {!! html::style('admin_static/font-awesome/css/font-awesome.css') !!}
+    {!! html::script('admin_static/js/jquery-2.1.1.js') !!}
+    {!! html::script('admin_static/extra/layer/layer.js') !!}
+    {!! html::script('admin_static/extra/seajs/sea.js') !!}
+    {!! html::script('admin_static/extra/seajs/seajs-css.js') !!}
+    {!! html::script('admin_static/extra/seajs/admin_config_seajs.js') !!}
 
     {{--@include('layout.main_upload')--}}
 
@@ -27,8 +27,8 @@
     </script>
 
     @yield('header')
-    {!! HTML::style('admin_static/css/animate.css') !!}
-    {!! HTML::style('admin_static/css/style.css') !!}
+    {!! html::style('admin_static/css/animate.css') !!}
+    {!! html::style('admin_static/css/style.css') !!}
     @yield('header_end')
     @include('administrator::public.header')
 
@@ -50,7 +50,7 @@
 @include("administrator::layouts.components.bind")
 @yield('js')
         <!-- Custom and plugin javascript -->
-{!! HTML::script('admin_static/js/inspinia.js') !!}
+{!! html::script('admin_static/js/inspinia.js') !!}
 <script>
     seajs.use('plugin_js/pace/pace.min');
     seajs.use('plugin_js/iCheck/icheck.min');

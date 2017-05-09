@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
@@ -17,8 +15,7 @@
     {!! html::script('admin_asset/extra/seajs/seajs-css.js') !!}
     {!! html::script('admin_asset/extra/seajs/admin_config_seajs.js') !!}
 
-
-
+    {{--@include('layout.main_upload')--}}
 
     <script>
         $.ajaxSetup({
@@ -40,8 +37,11 @@
 <body>
 
 <div id="wrapper">
-    <div class="gray-bg">
-        {!! $content !!}
+    @include('administrator::public.nav')
+    <div id="page-wrapper" class="gray-bg">
+        @include('administrator::public.top')
+        @yield('content')
+        @include('administrator::public.footer')
     </div>
 </div>
 
@@ -49,7 +49,7 @@
 <!-- Mainly scripts -->
 @include("administrator::layouts.components.bind")
 @yield('js')
-        <!-- Custom and plugin javascript -->
+<!-- Custom and plugin javascript -->
 {!! html::script('admin_asset/js/inspinia.js') !!}
 <script>
     seajs.use('plugin_js/pace/pace.min');

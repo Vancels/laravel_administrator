@@ -10,7 +10,7 @@
 
     <script>
         var refer_icon = function (that) {
-            that.src = '{{ \vTools::fmt_user_icon('') }}';
+            that.src = '';
         }
     </script>
 @stop
@@ -136,7 +136,7 @@
                                     <input name="_method" type="hidden" value="{{ $method }}">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <fieldset class="form-horizontal">
-                                        @include('components.edit',compact('data'))
+                                        @include('administrator::components.edit',compact('data'))
                                     </fieldset>
                                 </form>
                             </div>

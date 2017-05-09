@@ -1,4 +1,4 @@
-@include('components.list.quick_input',[
+@include('administrator::components.list.quick_input',[
 'url'   => '/admin/shop_items/'.$value->id,
 'field' => 'cost_price',
 'value' => $value->cost_price_show,
@@ -6,7 +6,7 @@
 ])
 
 
-@include("components.list.quick_bool",[
+@include("administrator::components.list.quick_bool",[
                                             'id'    => $value->id,
                                             'url'   => '/admin/shop_items/'.$value->id,
                                             'field' => 'status',

@@ -9,7 +9,7 @@ $config_fields = $data->config_fields();
         <label class="col-sm-2 control-label">{{ $field_config['title'] }}
             :</label>
         <div class="col-sm-10">
-            @include("components.field.".$field_config['type'],['data'=>$data])
+            @include("administrator::components.field.".$field_config['type'],['data'=>$data])
         </div>
     </div>
 @endforeach

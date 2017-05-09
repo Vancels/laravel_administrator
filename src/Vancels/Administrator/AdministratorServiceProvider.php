@@ -2,6 +2,8 @@
 namespace Vancels\Administrator;
 
 use Illuminate\Support\ServiceProvider;
+use Vancels\Administrator\Console\CreateModelCommand;
+use Vancels\Administrator\Console\ToolsCommand;
 use Vancels\Administrator\Facade\ToolsFacade;
 use Vancels\Administrator\Service\ToolServiceInterface;
 
@@ -43,6 +45,23 @@ class AdministratorServiceProvider extends ServiceProvider
         });
 
         $this->app->alias('vTools', ToolsFacade::class);
+
+
+        // 绑定命令行
+        $this->app->singleton(
+            'command.vancels.create_model',
+            function ($app) {
+                return new CreateModelCommand($app['files'], $app['view']);
+            }
+        );
+        $this->app->singleton(
+            'command.vancels.tools',
+            function ($app) {
+                return new ToolsCommand($app['files'], $app['view']);
+            }
+        );
+
+        $this->commands('command.vancels.create_model','command.vancels.tools');
     }
 
 }

@@ -14,7 +14,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class AdminUser extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, AdminCommonModel;
 
     /**
      * The attributes that are mass assignable.

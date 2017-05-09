@@ -40,7 +40,7 @@ $model_cfg = $model->getModel()->config_fields();
                             </div>
                             <div class="row">
                                 <div class="col-sm-5 m-b-xs">
-                                    @include('addon.shop_category')
+                                    @include('administrator::addon.shop_category')
                                 </div>
 
                                 <div class="col-sm-3">
@@ -60,9 +60,9 @@ $model_cfg = $model->getModel()->config_fields();
 
                             <div class="row">
                                 <div class="col-sm-4 m-b-xs">
-                                    {{ Form::select("feature",[''=>'推荐状态','0'=>'未推荐','1'=>'推荐'],Input::get('feature')) }}
-                                    {{ Form::select("has_image",[''=>'缩略图状态','0'=>'无缩略图','1'=>'有缩略图'],Input::get('has_image')) }}
-                                    {{ Form::select("status",[''=>'上架状态','0'=>'未上架','1'=>'已上架'],Input::get('status')) }}
+                                    {{ form::select("feature",[''=>'推荐状态','0'=>'未推荐','1'=>'推荐'],Input::get('feature')) }}
+                                    {{ form::select("has_image",[''=>'缩略图状态','0'=>'无缩略图','1'=>'有缩略图'],Input::get('has_image')) }}
+                                    {{ form::select("status",[''=>'上架状态','0'=>'未上架','1'=>'已上架'],Input::get('status')) }}
                                 </div>
                                 <input type="hidden" name="order" value="" id="order_bys"/>
                                 {{--<span style="float: right;padding-right: 20px;"><a href="javascript:void(0)" onclick="order_by('{{(Input::get('order')==''||Input::get('order')=='desc')  ?'asc':'desc'}}')">{{(Input::get('order')==''||Input::get('order')=='desc')  ?'按ID升序':'按ID降序'}}</a></span>--}}

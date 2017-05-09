@@ -1,7 +1,11 @@
 <?php
 
 namespace Vancels\Administrator\Models;
-
+/**
+ * Class AdminCommonModel
+ * @package Vancels\Administrator\Models
+ * @see \Eloquent
+ */
 trait AdminCommonModel
 {
     public function config_fields()

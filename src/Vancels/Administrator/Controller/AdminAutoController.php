@@ -2,7 +2,7 @@
 
 namespace Vancels\Administrator\Controller;
 
-use App\Models\CommonModel;
+use Vancels\Administrator\Models\AdminCommonModel as CommonModel;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

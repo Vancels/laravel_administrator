@@ -1,11 +1,25 @@
 <?php
+
 namespace Vancels\Administrator\Service;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 
+/**
+ * Class ToolServiceInterface
+ * @package Vancels\Administrator\Service
+ */
 class ToolServiceInterface
 {
+    /**
+     * DatabaseService
+     * @return \Illuminate\Foundation\Application|mixed|DatabaseService
+     */
+    public function database_service()
+    {
+        return app(DatabaseService::class);
+    }
+
 
     /**
      * 样式文件 - label
@@ -52,9 +66,9 @@ class ToolServiceInterface
     /**
      * 分页获取
      *
-     * @param array  $results  数据
-     * @param int    $total    总数
-     * @param int    $perPage  每页显示条数 [默认:15]
+     * @param array  $results 数据
+     * @param int    $total 总数
+     * @param int    $perPage 每页显示条数 [默认:15]
      * @param string $pageName 分页参数名 [默认:page]
      *
      * @return LengthAwarePaginator

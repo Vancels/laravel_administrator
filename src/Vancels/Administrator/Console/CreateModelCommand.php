@@ -59,16 +59,44 @@ class CreateModelCommand extends Command
      */
     public function fire()
     {
-        $name     = $this->argument('name');
-        $fileName = base_path("{$name}.txt");
-        $content  = file_get_contents($fileName);
-        $line     = explode("\r\n", $content);
-        \Schema::create($name, function (\Illuminate\Database\Schema\Blueprint $table) use ($line) {
-            foreach ($line as $value) {
-                $table->string($value);
-            }
-            $table->timestamps();
-        });
+        $name = $this->argument('name');
+
+        $ask    = <<<eot
+Please Input Action
+- 1 create model
+- 2 set edit list
+eot;
+        $action = $this->ask($ask);
+        switch ($action) {
+            case 1:
+                $fileName = base_path("{$name}.txt");
+                $content  = file_get_contents($fileName);
+                $line     = explode("\r\n", $content);
+                \Schema::create($name, function (\Illuminate\Database\Schema\Blueprint $table) use ($line) {
+                    foreach ($line as $value) {
+                        $table->string($value)->nullable();
+                    }
+                    $table->timestamps();
+                });
+                break;
+            case 2:
+                $fileName = base_path("{$name}.txt");
+                $content  = file_get_contents($fileName);
+                $line     = explode("\r\n", $content);
+                $out      = [];
+                foreach ($line as $value) {
+                    $out[$value] = array(
+                        'title' => $value,
+                        'type'  => 'text',
+                    );
+                }
+
+                $out = var_export($out, 1);
+                file_put_contents(base_path("{$name}.edit.txt"), $out);
+                break;
+        }
+
+
         $this->info("Success");
     }
 

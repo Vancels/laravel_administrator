@@ -1,7 +1,7 @@
 <?php
 $config_fields = $data->config_fields();
 ?>
-@foreach($config_fields['default'] as $field=>$field_config)
+@foreach($config_fields['default'] as $field => $field_config)
     <?php
     isset($field_config['type']) || $field_config['type'] = "text";
     ?>

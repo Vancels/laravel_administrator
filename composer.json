@@ -1,26 +1,25 @@
 {
-  "name"             : "vancels/laravel_administrator",
-  "description"      : "laravel administrator",
-  "authors"          : [
+  "name": "vancels/laravel_administrator",
+  "description": "laravel administrator",
+  "license": "MIT",
+  "authors": [
     {
-      "name" : "Mr.Wang",
+      "name": "Mr.Wang",
       "email": "281762391@qq.com"
     }
   ],
-  "support"          : {
+  "support": {
     "issues": "https://github.com/Vancels/laravel_administrator/issues"
   },
-  "require"          : {
+  "require": {
     "php": ">=5.4.0"
   },
-  "autoload"         : {
+  "autoload": {
     "classmap": [
       "src/controllers"
     ],
-    "psr-0"   : {
+    "psr-0": {
       "Vancels\\Administrator": "src/"
     }
-  },
-  "minimum-stability": "stable",
-  "version": "1.0.2"
+  }
 }
